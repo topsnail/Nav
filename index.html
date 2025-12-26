@@ -4,11 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <title>CloudNav (云航)</title>
-  <!-- Tailwind CSS 引入 -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- 图标库引入 -->
   <link href="https://cdn.jsdelivr.net/npm/lucide-react@0.453.0/dist/umd/lucide-react.min.js" rel="stylesheet">
-  <!-- Tailwind 自定义配置：新增 nav-bg 颜色别名 -->
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -19,8 +16,6 @@
             secondary: '#64748b',
             dark: '#0f172a',
             card: '#1e293b',
-            // 核心新增：给 #779abc 起别名 nav-bg
-            'nav-bg': '#779abc'
           }
         }
       }
@@ -31,7 +26,6 @@
       .content-auto {
         content-visibility: auto;
       }
-      /* 隐藏滚动条 */
       .scrollbar-hide {
         -ms-overflow-style: none;
         scrollbar-width: none;
@@ -39,7 +33,6 @@
       .scrollbar-hide::-webkit-scrollbar {
         display: none;
       }
-      /* Tooltip 样式 */
       .tooltip {
         @apply invisible absolute opacity-0 transition-opacity duration-300 bg-dark/80 text-white text-xs rounded py-1 px-2 z-50;
       }
@@ -55,10 +48,9 @@
     }
   </style>
 </head>
-<!-- 核心修改：使用自定义别名 bg-nav-bg 作为背景色 -->
-<body class="bg-nav-bg dark:bg-slate-900 min-h-screen antialiased text-gray-800 dark:text-gray-200 scrollbar-hide">
+<!-- 直接用 bg-[#779abc]，CF 无需解析别名，必生效 -->
+<body class="bg-[#779abc] dark:bg-slate-900 min-h-screen antialiased text-gray-800 dark:text-gray-200 scrollbar-hide">
   <div id="root"></div>
-  <!-- 项目脚本引入（保持不变） -->
   <script type="importmap">
     {
       "imports": {
